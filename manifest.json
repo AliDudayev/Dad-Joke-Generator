@@ -1,0 +1,12 @@
+{
+    "name": "Dad jokes",
+    "version": "1.0.0",
+    "description": "This is an extension to get random dad jokes",
+    "manifest_version": 3,
+    "author": "Magomed-Ali Dudayev",
+    "action": 
+    {
+        "default_popup": "index.html",
+        "default_titel": "Dad jokes"
+    }
+}
