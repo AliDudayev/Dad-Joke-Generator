@@ -4,13 +4,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dad Jokes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        div {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px 40px;
+            width: 400px;
+            max-width: 400px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+
+        div:hover {
+            transform: translateY(-5px);
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1::before {
+            content: "😂 ";
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 15px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        #setup, #punchline {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 5px solid #667eea;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.5;
+        }
+
+        #setup {
+            font-size: 1.1rem;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        #punchline {
+            font-size: 1rem;
+            color: #e74c3c;
+            font-weight: bold;
+            font-style: italic;
+            border-left-color: #e74c3c;
+        }
+
+        button {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            font-weight: bold;
+            margin-top: 15px;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+        div {
+            margin: 10px;
+            padding: 30px 20px;
+            width: 350px;
+        }
+        
+        h1 {
+            font-size: 1.8rem;
+        }
+    </style>
 </head>
 <body>
     <div>
         <h1>Dad Jokes</h1>
         <p id="setup"></p>
         <p id="punchline"></p>
+        <button id="jokeBtn">Get Another Joke</button>
     </div>
-</body>
+
 <script src="script.js"></script>
+</body>
 </html>

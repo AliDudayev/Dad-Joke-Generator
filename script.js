@@ -20,4 +20,11 @@ async function fetchJoke()
         console.error(error);
     }
 }
+
+// Load initial joke when page loads
 fetchJoke();
+
+// Add event listener for the button when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('jokeBtn').addEventListener('click', fetchJoke);
+});
